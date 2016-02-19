@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Biblioteca{% endblock %}</title>
-        {% block stylesheets %}
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Biblioteca{% endblock %}</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    {% block stylesheets %}
         <link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    {% endblock %}
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body class="login-page">
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
 </html>
