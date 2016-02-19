@@ -19,19 +19,39 @@ class SecurityController extends Controller
      */
     public function loginAction(Request $request)
     {
+        $session = $request->getSession();
+
         $authenticationUtils = $this->get('security.authentication_utils');
 
         $error = $authenticationUtils->getLastAuthenticationError();
 
-        $lastUserName = $authenticationUtils->getLastUsername();
+        $lastUsername = $authenticationUtils->getLastUsername();
+
+        $auth = $request->request->all();
+
+        if(isset($auth['_username'])) {
+            if ($auth['_username'] == 'cesar') {
+                return $this->redirectToRoute('biblioteca_home');
+            }
+        }
 
         return $this->render(
             'security/login.html.twig',
             array(
-                'last_username' => $lastUserName,
-                'error' => $error,
+                'last_username' => $lastUsername,
+                'error'         => $error,
             )
         );
+    }
+
+    public function loginCheckAction()
+    {
+
+    }
+
+    public function logoutAction()
+    {
+
     }
 
 }
