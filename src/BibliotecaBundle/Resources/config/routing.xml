@@ -12,6 +12,10 @@
         <default key="_controller">BibliotecaBundle:Default:index</default>
     </route>
 
+    <route id="biblioteca_acervo" path="/acervo">
+        <default key="_controller">BibliotecaBundle:Acervo:index</default>
+    </route>
+
     <route id="_security_login" path="/login">
         <default key="_controller">AppBundle:Security:login</default>
     </route>
